@@ -3,7 +3,7 @@ CFLAGS = -g -Wall -I.
 LIBS = -lgd -pthread
 THREADS ?= 4
 #DIR ?= Input-image-dir
-DIR ?= Input-image-big
+DIR ?= Dataset-B
 
 
 all: process-photos-serial process-photos-parallel-A process-photos-parallel-B
