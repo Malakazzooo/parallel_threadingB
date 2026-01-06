@@ -17,13 +17,13 @@
 /******************************************************************************
  * Instituto Superior Técnico
  * Programação Concorrente 2025/2026
- * Projeto - Parte A
+ * Projeto - Parte B
  *
  * Grupo: 122
  * Aluno: Luis Miguel (100010)
  *
  * Ficheiro: process-photos-parallel-B.c
- * Descrição: Versão paralela do processamento de imagens usando Pthreads.
+ * Descrição: Versão paralela do processamento de imagens usando Pthreads com Pipes e interatividade.
  *****************************************************************************/
 
 // Estrutura para enviar dados do Main para as Threads via Pipe
@@ -139,10 +139,10 @@ void *worker_thread(void *arg) {
         double time_local = total_processing_time;
         pthread_mutex_unlock(&stats_mutex); 
 
-        printf("thread %d processou %s em %.2fs\n", args->thread_id, task.file_name, seconds);
-        printf("Numero total de imagens processadas: %d\n", total_local);
+        printf("\tthread %d processou %s em %.2fs\n", args->thread_id, task.file_name, seconds);
+        printf("\tNumero total de imagens processadas: %d\n", total_local);
         if (total_local > 0)
-            printf("Tempo médio de processamento: %.2fs\n", time_local / total_local);
+            printf("\tTempo médio de processamento: %.2fs\n", time_local / total_local);
     }
 
     close(args->pipe_read_fd);

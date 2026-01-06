@@ -1,0 +1,17 @@
+# Ignorar ficheiros objeto e executáveis
+*.o
+process-photos-parallel-B
+process-photos-parallel-A
+serial-complex
+
+# Ignorar pastas de imagens (input e output)
+Result-image-dir/
+Datasets/
+*.jpeg
+
+# Ignorar ficheiros do sistema/IDE
+.DS_Store
+.vscode/
+
+# Ignorar o zip da submissão (não é preciso no git)
+*.zip
